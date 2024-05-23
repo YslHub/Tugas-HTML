@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        .navbar {
+            background-color: #343a40 !important; /* Dark background color for the navbar */
+        }
+
+        .navbar-brand img {
+            filter: brightness(0) invert(1); /* Invert the colors of the logo */
+        }
+
+        .nav-link {
+            color: #fff !important; /* White text for nav links */
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Green button */
+            border-color: #28a745; /* Green border color */
+        }
+
+        .carousel-item img {
+            max-height: 100vh;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        .carousel-caption h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-content {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .section-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark background color for the footer */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            animation: scrollBounce 2s infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .scroll-down:hover {
+            animation: none;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #28a745;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .staff-member {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .staff-img {
+            border-radius: 50%;
+            max-width: 200px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .staff-img:hover {
+            transform: scale(1.1);
+        }
+
+        .staff-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .staff-position {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .staff-description {
+            font-size: 1rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="Wing_(company)_logo.png" alt="Company Logo" width="100" height="45">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="work.jpg" class="d-block w-100" alt="Work 1">
+            <div class="carousel-caption">
+                <h1>Welcome to Our Company</h1>
+                <p>Ini cuman contoh company website ya...</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="work.jpg" class="d-block w-100" alt="Work 2">
+            <div class="carousel-caption">
+                <h1>Discover Our Services</h1>
+                <p>Kalian bisa explore atau melihat lihat saja</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="work.jpg" class="d-block w-100" alt="Work 3">
+            <div class="carousel-caption">
+                <h1>Contact Us</h1>
+                <p>Bisa hubungi kami jika mau</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
+<div id="about" class="container mt-5">
+    <h2 class="section-title">About Us</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="section-content">Company website ini adalah contoh website untuk tugas saya,terima kasih telah mengunjungi</p>
+        </div>
+        <div class="col-md-6">
+            <p class="section-content">Dibuat hanya untuk tugas dan dikumpulkan</p>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="container mt-5">
+    <h2 class="section-title">Our Services</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="section-content">
+                <li>Service 1</li>
+                <li>Service 2</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="section-content">
+                <li>Service 3</li>
+                <li>Service 4</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="section-title">Our Team</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="staff-member">
+                <img src="data:image/jpeg;base64,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" alt="Staff 1" class="staff-img">
+                <h3 class="staff-name">Ryan</h3>
+                <p class="staff-position">CEO</p>
+                <p class="staff-description">Si CEO perusahaan</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="staff-member">
+                <img src="https://cdn1-production-images-kly.akamaized.net/MkGjB29MjC4iBnSn0ojdN3UxqV0=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2538308/original/021203900_1545047528-01.jpg" alt="Staff 2" class="staff-img">
+                <h3 class="staff-name">Yusril</h3>
+                <p class="staff-position">CFO</p>
+                <p class="staff-description">Si CFO perusahaan</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="staff-member">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVaCgAfKcxVRZfMDMTVVSor1X7PjGVbJdAOL_WAuJ2Q&s" alt="Staff 3" class="staff-img">
+                <h3 class="staff-name">Rama</h3>
+                <p class="staff-position">CTO</p>
+                <p class="staff-description">Si CTO perusahaan</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact" class="container mt-5">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-content">Ini adalah nomer kami</p>
+    <ul class="section-content">
+        <li>Ryan 0822193813819</li>
+        <li>Yusril 08222342444</li>
+        <li>Rama 08225345345</li>
+    </ul>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </div>
+</footer>
+
+<a href="#about" class="scroll-down">&#8595;</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>
